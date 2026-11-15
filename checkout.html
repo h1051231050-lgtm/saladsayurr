@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Fresh Cut</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="brand" href="index.html"><span>🌿</span> Fresh Cut</a>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="katalog.html">Katalog</a>
+      <a class="active" href="keranjang.html">Pesanan</a>
+    </nav>
+    <a class="cart-icon" href="keranjang.html" aria-label="Keranjang">🛒<b id="cartCount">0</b></a>
+    <a class="nav-auth" id="navAuthLink" href="login.html">Masuk / Daftar</a>
+  </header>
+
+  <main class="container page">
+    <a class="back" href="keranjang.html">← Kembali ke Keranjang</a>
+    <div class="page-heading">
+      <span class="eyebrow">Langkah terakhir</span>
+      <h1>Checkout & Kirim ke WhatsApp</h1>
+    </div>
+
+    <form id="checkoutForm" class="checkout-grid">
+
+      <!-- Bagian Form Kiri -->
+      <section class="form-card">
+        <div class="wa-config-box">
+          <label>Nomor WhatsApp Penjual (Tujuan Pesanan)
+            <input type="tel" id="sellerWaInput" placeholder="Contoh: 6281234567890">
+          </label>
+          <small>Gunakan format kode negara <b>62</b> tanpa tanda + atau spasi (default juga bisa diatur permanen di <code>app.js</code>).</small>
+        </div>
+
+        <h2>Data Pelanggan</h2>
+
+        <label>Nama Lengkap
+          <input required name="name" id="custName" placeholder="Masukkan nama lengkap">
+        </label>
+
+        <label>Nomor WhatsApp / Telepon Pelanggan
+          <input required name="phone" id="custPhone" type="tel" placeholder="08xxxxxxxxxx">
+        </label>
+
+        <h3>Pengambilan Pesanan</h3>
+        <div class="radio-card">
+          <label>
+            <input type="radio" name="delivery" value="pickup" checked>
+            <span>
+              <b>Ambil di tempat (Gratis Ongkir)</b>
+              <small>Ambil pesanan langsung di outlet Fresh Cut</small>
+            </span>
+          </label>
+          <label>
+            <input type="radio" name="delivery" value="delivery">
+            <span>
+              <b>Diantar (+Rp5.000)</b>
+              <small>Pesanan diantar ke alamat kamu</small>
+            </span>
+          </label>
+        </div>
+
+        <div id="addressContainer" style="display: none; margin-top: 18px;">
+          <label>Alamat Pengiriman Lengkap
+            <textarea name="address" id="custAddress" rows="3" placeholder="Masukkan alamat lengkap (Nama kos/gedung, jalan, nomor rumah/kamar)"></textarea>
+          </label>
+        </div>
+
+        <h3>Metode Pembayaran</h3>
+        <div class="radio-card">
+          <label>
+            <input type="radio" name="payment" value="QRIS" checked>
+            <span>
+              <b>QRIS</b>
+              <small>Scan via GoPay, OVO, Dana, ShopeePay, Mobile Banking</small>
+            </span>
+          </label>
+          <label>
+            <input type="radio" name="payment" value="Transfer Bank">
+            <span>
+              <b>Transfer Bank</b>
+              <small>BCA, Mandiri, BNI, BRI</small>
+            </span>
+          </label>
+          <label>
+            <input type="radio" name="payment" value="Tunai / COD">
+            <span>
+              <b>Tunai / Bayar di Tempat (COD)</b>
+              <small>Bayar tunai saat ambil atau pesanan tiba</small>
+            </span>
+          </label>
+        </div>
+
+        <label style="margin-top: 18px;">Catatan Tambahan (Opsional)
+          <input type="text" name="notes" placeholder="Contoh: Tolong sediakan sendok plastik">
+        </label>
+      </section>
+
+      <!-- Bagian Ringkasan Kanan -->
+      <aside class="summary-card" style="height: fit-content; position: sticky; top: 100px;">
+        <h2>Ringkasan Pesanan</h2>
+
+        <div id="checkoutItems"></div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <b id="checkoutSubtotal">Rp0</b>
+        </div>
+
+        <div class="summary-row">
+          <span>Ongkir</span>
+          <b id="checkoutShipping">Rp0</b>
+        </div>
+
+        <div class="summary-total">
+          <span>Total Pembayaran</span>
+          <b id="checkoutTotal">Rp0</b>
+        </div>
+
+        <button class="btn btn-wa btn-wide" type="submit" style="margin-top: 20px;">
+          💬 Buat Pesanan & Kirim ke WhatsApp
+        </button>
+      </aside>
+
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Menu — Fresh Cut</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="brand" href="index.html"><span>🌿</span> Fresh Cut</a>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a class="active" href="katalog.html">Katalog</a>
+      <a href="keranjang.html">Pesanan</a>
+    </nav>
+    <a class="cart-icon" href="keranjang.html" aria-label="Keranjang">🛒<b id="cartCount">0</b></a>
+    <a class="nav-auth" id="navAuthLink" href="login.html">Masuk / Daftar</a>
+  </header>
+
+  <main class="container page">
+    <div class="page-heading">
+      <span class="eyebrow">Pilihan Menu Fresh Cut</span>
+      <h1>Katalog Salad</h1>
+      <p>Pilih menu salad favoritmu, atur saus atau catatan bahan, lalu pesan langsung ke WhatsApp.</p>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Menu 1: Original (Rp15.000) -->
+      <article class="product-card">
+        <span class="badge-tag green">Menu 1 • Original</span>
+        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=85" alt="Fresh Salad Original">
+        <div class="product-body">
+          <h2>Fresh Salad Original</h2>
+          <p><strong>Komposisi:</strong> Sawi segar, kol renyah, jagung manis, wortel serut, telur rebus, disajikan dengan saus mayones creamy.</p>
+          <strong class="price-tag">Rp15.000</strong>
+          <div class="card-actions">
+            <a class="btn btn-outline" href="detail.html?id=original">Lihat Detail</a>
+            <button class="btn btn-accent add-btn" data-id="original">Tambah ke Keranjang</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Menu 2: Ayam Suwir (Rp20.000) -->
+      <article class="product-card">
+        <span class="badge-tag">Menu 2 • Saran Menu</span>
+        <img src="https://images.unsplash.com/photo-1607532941433-304659e8198a?auto=format&fit=crop&w=700&q=85" alt="Fresh Salad Ayam Suwir">
+        <div class="product-body">
+          <h2>Fresh Salad Ayam Suwir</h2>
+          <p><strong>Komposisi:</strong> Sawi segar, kol renyah, jagung manis, wortel serut, telur rebus, saus mayones, ditambah <strong>ayam suwir gurih</strong>.</p>
+          <strong class="price-tag">Rp20.000</strong>
+          <div class="card-actions">
+            <a class="btn btn-outline" href="detail.html?id=ayamsuwir">Lihat Detail</a>
+            <button class="btn btn-accent add-btn" data-id="ayamsuwir">Tambah ke Keranjang</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Kartu Custom Salad -->
+      <article class="product-card" style="border: 2px dashed var(--green); background-color: #fafdfa;">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=85" alt="Custom Salad">
+        <div class="product-body">
+          <h2>Buat Custom Salad</h2>
+          <p>Bebas berkreasi! Pilih sendiri sayuran, jenis saus, dan ekstra topping sesuai seleramu.</p>
+          <strong class="price-tag">Mulai Rp15.000</strong>
+          <div class="card-actions">
+            <a class="btn btn-primary btn-wide" href="custom.html">Racik Sekarang 🥗</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

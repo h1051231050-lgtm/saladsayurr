@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesanan Berhasil — Fresh Cut</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="brand" href="index.html"><span>🌿</span> Fresh Cut</a>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="katalog.html">Katalog</a>
+      <a class="active" href="keranjang.html">Pesanan</a>
+    </nav>
+    <a class="cart-icon" href="keranjang.html" aria-label="Keranjang">🛒<b id="cartCount">0</b></a>
+    <a class="nav-auth" id="navAuthLink" href="login.html">Masuk / Daftar</a>
+  </header>
+
+  <main class="container page">
+    <section class="confirmation">
+      <div class="success-icon">✓</div>
+      <span class="eyebrow">Pesanan Diteruskan ke WhatsApp</span>
+      <h1>Pesanan Berhasil Dibuat</h1>
+      <p>Detail pesanan sudah disiapkan dan diteruskan ke WhatsApp Fresh Cut.</p>
+
+      <div class="order-number">
+        <small>Nomor Pesanan</small>
+        <strong id="orderNumber">#FC001</strong>
+      </div>
+
+      <div class="confirmation-grid">
+        <!-- Bagian Kiri: Timeline & Preview Struk WA -->
+        <div>
+          <h2>Status Pesanan</h2>
+          <div class="timeline">
+            <div class="timeline-item done">
+              <i>✓</i>
+              <div>
+                <b>Pesanan dibuat</b>
+                <small>Format pesanan siap dikirim ke WhatsApp penjual</small>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <i>→</i>
+              <div>
+                <b>Konfirmasi Admin WhatsApp</b>
+                <small>Penjual menerima pesan WhatsApp dan memproses salad</small>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <i>→</i>
+              <div>
+                <b>Siap diambil / diantar</b>
+                <small>Kamu akan mendapat kabar lewat WhatsApp</small>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <i>→</i>
+              <div>
+                <b>Selesai</b>
+                <small>Selamat menikmati salad segar Fresh Cut!</small>
+              </div>
+            </div>
+          </div>
+
+          <h2 style="margin-top: 24px;">Preview Pesan WhatsApp</h2>
+          <div class="wa-preview" id="waPreviewBox"></div>
+        </div>
+
+        <!-- Bagian Kanan: Ringkasan -->
+        <aside class="summary-card" style="height: fit-content;">
+          <h2>Ringkasan Pesanan</h2>
+          <div id="confirmationCustomer" style="font-size: 12px; color: var(--muted); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line);"></div>
+
+          <div id="confirmationItems"></div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <b id="confirmationSubtotal">Rp0</b>
+          </div>
+          <div class="summary-row">
+            <span>Ongkir</span>
+            <b id="confirmationShipping">Rp0</b>
+          </div>
+          <div class="summary-total">
+            <span>Total Pembayaran</span>
+            <b id="confirmationTotal">Rp0</b>
+          </div>
+        </aside>
+      </div>
+
+      <div class="confirm-actions">
+        <a id="waResendBtn" class="btn btn-wa" href="#" target="_blank" rel="noopener">💬 Buka WhatsApp Penjual</a>
+        <button id="copyWaBtn" type="button" class="btn btn-outline">📋 Salin Format Pesanan</button>
+        <a class="btn btn-accent" href="katalog.html">Belanja Lagi</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

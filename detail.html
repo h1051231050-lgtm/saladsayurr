@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk — Fresh Cut</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="brand" href="index.html"><span>🌿</span> Fresh Cut</a>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a class="active" href="katalog.html">Katalog</a>
+      <a href="keranjang.html">Pesanan</a>
+    </nav>
+    <a class="cart-icon" href="keranjang.html" aria-label="Keranjang">🛒<b id="cartCount">0</b></a>
+    <a class="nav-auth" id="navAuthLink" href="login.html">Masuk / Daftar</a>
+  </header>
+
+  <main class="container page">
+    <a class="back" href="katalog.html">← Kembali ke Katalog</a>
+
+    <section class="detail-card">
+      <div class="detail-photo">
+        <img id="detailImage" src="" alt="Foto Produk">
+      </div>
+
+      <div class="detail-info">
+        <span class="eyebrow" id="detailBadge">Menu Fresh Cut</span>
+        <h1 id="detailName">Fresh Salad Original</h1>
+        <div class="price" id="detailPrice">Rp15.000</div>
+        <p id="detailDescription">Sawi segar, kol renyah, jagung manis, wortel serut, telur rebus, dan saus mayones creamy.</p>
+
+        <h3>Catatan Bahan <small>(Centang jika tidak ingin pakai)</small></h3>
+        <div class="ingredients">
+          <label><input type="checkbox" name="remove_veg" value="Tanpa Sawi"> Tanpa Sawi</label>
+          <label><input type="checkbox" name="remove_veg" value="Tanpa Kol"> Tanpa Kol</label>
+          <label><input type="checkbox" name="remove_veg" value="Tanpa Jagung"> Tanpa Jagung</label>
+          <label><input type="checkbox" name="remove_veg" value="Tanpa Wortel"> Tanpa Wortel</label>
+          <label><input type="checkbox" name="remove_veg" value="Tanpa Telur"> Tanpa Telur</label>
+          <label><input type="checkbox" name="remove_veg" value="Saus Dipisah"> Saus Dipisah</label>
+        </div>
+
+        <h3>Pilihan Saus</h3>
+        <div class="choices">
+          <label><input type="radio" name="sauce" value="Mayones Creamy" checked> Mayones Creamy</label>
+          <label><input type="radio" name="sauce" value="Thousand Island"> Thousand Island</label>
+          <label><input type="radio" name="sauce" value="Honey Mustard"> Honey Mustard</label>
+          <label><input type="radio" name="sauce" value="Roasted Sesame"> Roasted Sesame</label>
+        </div>
+
+        <h3>Tambah Topping Ekstra <small>(Opsional)</small></h3>
+        <div class="toppings">
+          <label>
+            <span><input type="checkbox" value="Ekstra Ayam Suwir" data-price="5000"> Ekstra Ayam Suwir</span>
+            <span>+Rp5.000</span>
+          </label>
+          <label>
+            <span><input type="checkbox" value="Ekstra Telur Rebus" data-price="3000"> Ekstra Telur Rebus</span>
+            <span>+Rp3.000</span>
+          </label>
+          <label>
+            <span><input type="checkbox" value="Ekstra Keju Parut" data-price="3000"> Ekstra Keju Parut</span>
+            <span>+Rp3.000</span>
+          </label>
+        </div>
+
+        <div class="quantity">
+          <span>Jumlah</span>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <button type="button" id="minus">−</button>
+            <b id="qty">1</b>
+            <button type="button" id="plus">+</button>
+          </div>
+        </div>
+
+        <button id="detailAdd" type="button" class="btn btn-accent btn-wide" style="margin-top: 15px;">Tambah ke Keranjang 🛒</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

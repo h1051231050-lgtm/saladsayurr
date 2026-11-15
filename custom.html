@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Salad — Fresh Cut</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="brand" href="index.html"><span>🌿</span> Fresh Cut</a>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a class="active" href="katalog.html">Katalog</a>
+      <a href="keranjang.html">Pesanan</a>
+    </nav>
+    <a class="cart-icon" href="keranjang.html" aria-label="Keranjang">🛒<b id="cartCount">0</b></a>
+    <a class="nav-auth" id="navAuthLink" href="login.html">Masuk / Daftar</a>
+  </header>
+
+  <main class="container page">
+    <a class="back" href="katalog.html">← Kembali ke Katalog</a>
+    <div class="page-heading">
+      <span class="eyebrow">Build Your Own</span>
+      <h1>Buat Salad Custom</h1>
+      <p>Pilih ukuran, sayuran, saus, dan topping sesuai selera kamu.</p>
+    </div>
+
+    <form id="customSaladForm" class="checkout-grid">
+
+      <section class="form-card">
+        <h2>1. Pilih Ukuran</h2>
+        <div class="radio-card">
+          <label>
+            <input type="radio" name="size" value="Regular" data-price="15000" checked>
+            <span>
+              <b>Regular (M)</b>
+              <small>Porsi standar mengenyangkan — Rp15.000</small>
+            </span>
+          </label>
+          <label>
+            <input type="radio" name="size" value="Large" data-price="20000">
+            <span>
+              <b>Large (L)</b>
+              <small>Porsi lebih besar — Rp20.000</small>
+            </span>
+          </label>
+        </div>
+
+        <h2 style="margin-top: 32px;">2. Pilih Sayuran</h2>
+        <p style="font-size: 12px; color: var(--muted); margin-top: -12px;">Bebas pilih sayuran dasar tanpa biaya tambahan.</p>
+        <div class="choices" style="margin-top: 12px;">
+          <label><input type="checkbox" name="veggies" value="Sawi" checked> Sawi Segar</label>
+          <label><input type="checkbox" name="veggies" value="Kol" checked> Kol Renyah</label>
+          <label><input type="checkbox" name="veggies" value="Jagung" checked> Jagung Manis</label>
+          <label><input type="checkbox" name="veggies" value="Wortel" checked> Wortel Serut</label>
+          <label><input type="checkbox" name="veggies" value="Selada"> Selada Hijau</label>
+          <label><input type="checkbox" name="veggies" value="Timun"> Mentimun</label>
+          <label><input type="checkbox" name="veggies" value="Tomat Cherry"> Tomat Cherry</label>
+        </div>
+
+        <h2 style="margin-top: 32px;">3. Pilih Saus (Dressing)</h2>
+        <div class="choices" style="margin-top: 12px;">
+          <label><input type="radio" name="dressing" value="Mayones Creamy" checked> Mayones Creamy</label>
+          <label><input type="radio" name="dressing" value="Thousand Island"> Thousand Island</label>
+          <label><input type="radio" name="dressing" value="Roasted Sesame"> Roasted Sesame</label>
+          <label><input type="radio" name="dressing" value="Honey Mustard"> Honey Mustard</label>
+        </div>
+
+        <h2 style="margin-top: 32px;">4. Ekstra Topping (Opsional)</h2>
+        <div class="toppings" style="margin-top: 12px;">
+          <label>
+            <span><input type="checkbox" name="extra" value="Ayam Suwir" data-price="5000"> Ayam Suwir Gurih</span>
+            <span>+Rp5.000</span>
+          </label>
+          <label>
+            <span><input type="checkbox" name="extra" value="Telur Rebus" data-price="3000"> Telur Rebus</span>
+            <span>+Rp3.000</span>
+          </label>
+          <label>
+            <span><input type="checkbox" name="extra" value="Keju Parut" data-price="3000"> Keju Cheddar Parut</span>
+            <span>+Rp3.000</span>
+          </label>
+        </div>
+      </section>
+
+      <aside class="summary-card" style="height: fit-content; position: sticky; top: 100px;">
+        <h2>Ringkasan Custom Salad</h2>
+
+        <div class="summary-row">
+          <span>Ukuran Dasar</span>
+          <b id="customBasePrice">Rp15.000</b>
+        </div>
+        <div class="summary-row">
+          <span>Ekstra Topping</span>
+          <b id="customExtraPrice">Rp0</b>
+        </div>
+
+        <div class="summary-total" style="margin-bottom: 20px;">
+          <span>Harga Satuan</span>
+          <b id="customTotalPrice" style="font-size: 20px;">Rp15.000</b>
+        </div>
+
+        <div class="quantity" style="justify-content: space-between; border-top: 1px solid var(--line); padding-top: 15px;">
+          <span>Jumlah Pesanan</span>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <button type="button" id="customMinus">−</button>
+            <b id="customQty">1</b>
+            <button type="button" id="customPlus">+</button>
+          </div>
+        </div>
+
+        <button id="customAddBtn" class="btn btn-accent btn-wide" type="button" style="margin-top: 20px;">Tambah ke Keranjang 🛒</button>
+      </aside>
+
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
